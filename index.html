@@ -21,19 +21,38 @@
     }
 
     header {
-      background-color: #f4f4f4;
-      padding: 2rem;
+      background: linear-gradient(to right, #5c6ac4, #8f94fb);
+      padding: 4rem 2rem;
       text-align: center;
+      color: #fff;
+      position: relative;
     }
 
     header h1 {
-      font-size: 2rem;
+      font-size: 3rem;
       font-weight: 700;
     }
 
     header p {
-      font-size: 1rem;
-      color: #666;
+      font-size: 1.2rem;
+      color: #e0e0ff;
+      margin-top: 0.5rem;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 1.8rem;
+      background: #fff;
+      color: #5c6ac4;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .hero-cta:hover {
+      background: #ecebff;
     }
 
     nav {
@@ -68,11 +87,11 @@
     }
 
     .section-title {
-      font-size: 1.5rem;
+      font-size: 2rem;
       margin-bottom: 1.5rem;
       font-weight: 700;
       text-align: center;
-      color: #004080;
+      color: #5c6ac4;
     }
 
     .services-grid {
@@ -84,9 +103,14 @@
 
     .service-card {
       background-color: #f9f9f9;
-      border-radius: 8px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      border-radius: 12px;
+      padding: 1.8rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
     }
 
     .service-card h3 {
@@ -114,6 +138,7 @@
   <header>
     <h1>Serena Abudara</h1>
     <p>People & Culture Management and Analysis Consultant</p>
+    <a href="#services" class="hero-cta">View Services</a>
   </header>
 
   <nav>
@@ -126,11 +151,10 @@
 
   <section id="about">
     <h2 class="section-title">About</h2>
-     <p>
-  As a People & Culture Management and Analysis Consultant, I specialize in designing strategic and human-centered HR practices tailored for mid and senior-level talent needs. With a solid foundation in organizational psychology, I help companies build data-driven and psychologically aligned recruitment systems that enhance team dynamics, increase long-term engagement, and support sustainable growth.
-  <br><br>
-  My work integrates behavioral science with recruitment strategy — from psychometric tests to case-based evaluations. Whether establishing new processes or optimizing existing frameworks, I provide consultancy to align people strategy with business goals.
-</p>
+    <p>
+      As a People & Culture Management and Analysis Consultant, I specialize in designing strategic and human-centered HR practices tailored for mid and senior-level talent needs. With a solid foundation in organizational psychology, I help companies build data-driven and psychologically aligned recruitment systems that enhance team dynamics, increase long-term engagement, and support sustainable growth.<br><br>
+      My work integrates behavioral science with recruitment strategy — from psychometric tests to case-based evaluations. Whether establishing new processes or optimizing existing frameworks, I provide consultancy to align people strategy with business goals.
+    </p>
   </section>
 
   <section id="services">
@@ -183,3 +207,4 @@
 </body>
 
 </html>
+
