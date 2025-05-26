@@ -1,210 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Serena Abudara | People & Culture Management and Analysis Consultant</title>
+  <title>Serena Abudara | People & Culture Consultant</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #ffffff;
       color: #333;
+      background-color: #ffffff;
       line-height: 1.6;
     }
-
-    header {
-      background: linear-gradient(to right, #5c6ac4, #8f94fb);
-      padding: 4rem 2rem;
-      text-align: center;
-      color: #fff;
-      position: relative;
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
     }
-
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #5c6ac4;
+      font-weight: 600;
+    }
+    header {
+      height: 100vh;
+      background: linear-gradient(to right, #7F7FD5, #86A8E7, #91EAE4);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 6rem 2rem 2rem;
+    }
     header h1 {
       font-size: 3rem;
-      font-weight: 700;
+      margin-bottom: 1rem;
+      animation: fadeIn 1.5s ease-out forwards;
     }
-
     header p {
-      font-size: 1.2rem;
-      color: #e0e0ff;
-      margin-top: 0.5rem;
+      font-size: 1.3rem;
+      max-width: 600px;
+      animation: fadeIn 2s ease-out forwards;
     }
-
-    .hero-cta {
-      display: inline-block;
+    .cta {
       margin-top: 2rem;
+      background-color: #5c6ac4;
+      color: white;
       padding: 0.8rem 1.8rem;
-      background: #fff;
-      color: #5c6ac4;
       border-radius: 30px;
       text-decoration: none;
       font-weight: 600;
-      transition: background 0.3s ease;
+      transition: background-color 0.3s ease;
     }
-
-    .hero-cta:hover {
-      background: #ecebff;
+    .cta:hover {
+      background-color: #3e4eb8;
     }
-
-    nav {
-      background-color: #fff;
-      border-bottom: 1px solid #eee;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      padding: 1rem;
-    }
-
-    nav li {
-      margin: 0 1rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-    }
-
     section {
-      padding: 4rem 2rem;
-      max-width: 1000px;
+      padding: 6rem 2rem;
+      max-width: 900px;
       margin: auto;
     }
-
-    .section-title {
+    h2 {
       font-size: 2rem;
-      margin-bottom: 1.5rem;
-      font-weight: 700;
-      text-align: center;
       color: #5c6ac4;
+      margin-bottom: 1rem;
     }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
+    .services li {
+      margin-bottom: 1.5rem;
     }
-
-    .service-card {
-      background-color: #f9f9f9;
-      border-radius: 12px;
-      padding: 1.8rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-      transition: transform 0.3s ease;
+    .contact p {
+      margin: 0.5rem 0;
     }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .service-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.75rem;
-      color: #333;
-    }
-
-    .service-card p {
-      font-size: 0.95rem;
-      color: #666;
-    }
-
     footer {
-      background-color: #f4f4f4;
       text-align: center;
       padding: 2rem;
+      background-color: #f0f0f0;
       font-size: 0.9rem;
-      color: #777;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <h1>Serena Abudara</h1>
-    <p>People & Culture Management and Analysis Consultant</p>
-    <a href="#services" class="hero-cta">View Services</a>
-  </header>
-
   <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div><strong>Serena Abudara</strong></div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
+  <header>
+    <h1>People and Culture Management and Analysis Consultant</h1>
+    <p>Empowering HR with psychology-driven strategies</p>
+    <a href="#contact" class="cta">Let’s Work Together</a>
+  </header>
+
   <section id="about">
-    <h2 class="section-title">About</h2>
+    <h2>About</h2>
     <p>
-      As a People & Culture Management and Analysis Consultant, I specialize in designing strategic and human-centered HR practices tailored for mid and senior-level talent needs. With a solid foundation in organizational psychology, I help companies build data-driven and psychologically aligned recruitment systems that enhance team dynamics, increase long-term engagement, and support sustainable growth.<br><br>
+      As a People & Culture Management and Analysis Consultant, I specialize in designing strategic and human-centered HR practices tailored for mid and senior-level talent needs. With a solid foundation in organizational psychology, I help companies build data-driven and psychologically aligned recruitment systems that enhance team dynamics, increase long-term engagement, and support sustainable growth.
+    </p>
+    <p>
       My work integrates behavioral science with recruitment strategy — from psychometric tests to case-based evaluations. Whether establishing new processes or optimizing existing frameworks, I provide consultancy to align people strategy with business goals.
     </p>
   </section>
 
   <section id="services">
-    <h2 class="section-title">Services</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Strategic Recruitment & Talent Acquisition</h3>
-        <p>Designing and managing competency-based recruitment processes specifically for mid and senior-level positions. Identifying and placing the most suitable candidates through case studies and behavioral assessment methods.</p>
-      </div>
-      <div class="service-card">
-        <h3>Recruitment Process Management</h3>
-        <p>Professional management of job postings, application screening, interviews, reference checks, and offer stages.</p>
-      </div>
-      <div class="service-card">
-        <h3>Performance Management</h3>
-        <p>Establishing systems to evaluate individual performance, analyze strengths, and build strategies to enhance motivation and engagement.</p>
-      </div>
-      <div class="service-card">
-        <h3>Behavioral & Psychometric Assessments</h3>
-        <p>Measuring personality traits and competencies using scientific tools to evaluate job-role fit accurately.</p>
-      </div>
-      <div class="service-card">
-        <h3>Organizational Development</h3>
-        <p>Analyzing internal structures to improve team dynamics and cross-department communication.</p>
-      </div>
-      <div class="service-card">
-        <h3>Exit Interviews & Experience Analysis</h3>
-        <p>Gathering and analyzing insights from exiting employees to improve retention and workplace satisfaction.</p>
-      </div>
-      <div class="service-card">
-        <h3>Case Study Development</h3>
-        <p>Creating and evaluating position-specific scenarios to test candidate alignment with company goals and culture.</p>
-      </div>
-      <div class="service-card">
-        <h3>HR Analytics & Reporting</h3>
-        <p>Delivering insights to leadership through candidate evaluation summaries, performance metrics, and organizational health reports.</p>
-      </div>
-    </div>
+    <h2>Services</h2>
+    <ul class="services">
+      <li><strong>Strategic Recruitment & Talent Acquisition:</strong> Designing and managing competency-based recruitment processes specifically for mid and senior-level positions.</li>
+      <li><strong>Recruitment Process Management:</strong> Professional management of job postings, application screening, interviews, reference checks, and offer stages.</li>
+      <li><strong>Performance Management:</strong> Establishing systems to evaluate individual performance, analyze strengths, and build strategies to enhance motivation and engagement.</li>
+      <li><strong>Behavioral & Psychometric Assessments:</strong> Measuring personality traits and competencies using scientific tools to evaluate job-role fit accurately.</li>
+      <li><strong>Organizational Development:</strong> Analyzing internal structures to improve team dynamics and cross-department communication.</li>
+      <li><strong>Exit Interviews & Experience Analysis:</strong> Gathering and analyzing insights from exiting employees to improve retention and workplace satisfaction.</li>
+      <li><strong>Case Study Development:</strong> Creating and evaluating position-specific scenarios to test candidate alignment with company goals and culture.</li>
+      <li><strong>HR Analytics & Reporting:</strong> Delivering insights to leadership through candidate evaluation summaries, performance metrics, and organizational health reports.</li>
+    </ul>
   </section>
 
-  <section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <p style="text-align: center;">📩 <strong>Email:</strong> <a href="mailto:serena@serenaconsultant.com">serena@serenaconsultant.com</a></p>
-    <p style="text-align: center;">📱 <strong>Phone:</strong> +90 553 263 93 27</p>
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p><strong>Email:</strong> serene@serenaconsultant.com</p>
+    <p><strong>Phone:</strong> 0553 263 93 27</p>
+    <p><strong>Location:</strong> Küçükbakkalköy Mah. Selvili Sok. No:4/20 Ataşehir / İstanbul</p>
   </section>
 
   <footer>
-    &copy; 2025 Serena Abudara | All rights reserved.
+    &copy; 2025 Serena Abudara. All rights reserved.
   </footer>
 </body>
-
 </html>
-
