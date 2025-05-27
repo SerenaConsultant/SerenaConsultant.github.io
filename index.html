@@ -10,86 +10,100 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #6a85b6, #bac8e0);
-      color: #fff;
+      background-color: #f3f4f6;
+      color: #111827;
     }
     nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(8px);
+      background: white;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
-      z-index: 100;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom: 1px solid #e5e7eb;
     }
     nav a {
-      color: white;
       margin-left: 1.5rem;
       text-decoration: none;
+      color: #4f46e5;
       font-weight: 600;
     }
     header {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 6rem 2rem 2rem;
-      background: url('https://images.unsplash.com/photo-1605902711622-cfb43c4437e1?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      background: linear-gradient(to right, #6b73ff, #000dff);
       color: white;
+      text-align: center;
+      padding: 8rem 2rem 6rem;
     }
     header h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 1rem;
       animation: fadeIn 1.2s ease-out;
     }
     header p {
-      font-size: 1.25rem;
-      max-width: 600px;
+      font-size: 1.2rem;
       animation: fadeIn 1.8s ease-out;
+      max-width: 600px;
+      margin: auto;
     }
     .cta-button {
       margin-top: 2rem;
-      background-color: #1e40af;
+      display: inline-block;
+      background-color: #2563eb;
       color: white;
       padding: 0.75rem 1.5rem;
-      border: none;
       border-radius: 30px;
       font-weight: bold;
       font-size: 1rem;
-      cursor: pointer;
       transition: background-color 0.3s ease;
       text-decoration: none;
       animation: fadeIn 2.5s ease-out;
     }
     .cta-button:hover {
-      background-color: #3b82f6;
+      background-color: #1d4ed8;
     }
     section {
       padding: 5rem 2rem;
-      max-width: 900px;
+      max-width: 960px;
       margin: auto;
-      color: #111;
     }
     h2 {
       font-size: 2rem;
-      margin-bottom: 1rem;
       color: #1e3a8a;
-    }
-    .services li {
       margin-bottom: 1.5rem;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+    .service-box {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    .service-box:hover {
+      transform: translateY(-5px);
+    }
+    .service-box strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #111827;
+    }
+    .contact p {
+      margin-bottom: 1rem;
     }
     footer {
       text-align: center;
       padding: 2rem;
-      font-size: 0.9rem;
       background-color: #e0e7ff;
       color: #111;
+      font-size: 0.9rem;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(30px); }
@@ -109,7 +123,7 @@
 
   <header>
     <h1>People and Culture Management and Analysis Consultant</h1>
-    <p>Organizational psychology meets strategic HR consulting.</p>
+    <p>Strategic, human-centered HR practices to empower sustainable growth.</p>
     <a href="#contact" class="cta-button">Let’s Work Together</a>
   </header>
 
@@ -125,19 +139,43 @@
 
   <section id="services">
     <h2>Services</h2>
-    <ul class="services">
-      <li><strong>Strategic Recruitment & Talent Acquisition:</strong> Designing and managing competency-based recruitment processes specifically for mid and senior-level positions.</li>
-      <li><strong>Recruitment Process Management:</strong> Professional management of job postings, application screening, interviews, reference checks, and offer stages.</li>
-      <li><strong>Performance Management:</strong> Establishing systems to evaluate individual performance, analyze strengths, and build strategies to enhance motivation and engagement.</li>
-      <li><strong>Behavioral & Psychometric Assessments:</strong> Measuring personality traits and competencies using scientific tools to evaluate job-role fit accurately.</li>
-      <li><strong>Organizational Development:</strong> Analyzing internal structures to improve team dynamics and cross-department communication.</li>
-      <li><strong>Exit Interviews & Experience Analysis:</strong> Gathering and analyzing insights from exiting employees to improve retention and workplace satisfaction.</li>
-      <li><strong>Case Study Development:</strong> Creating and evaluating position-specific scenarios to test candidate alignment with company goals and culture.</li>
-      <li><strong>HR Analytics & Reporting:</strong> Delivering insights to leadership through candidate evaluation summaries, performance metrics, and organizational health reports.</li>
-    </ul>
+    <div class="services">
+      <div class="service-box">
+        <strong>Strategic Recruitment & Talent Acquisition</strong>
+        Designing and managing competency-based recruitment processes specifically for mid and senior-level positions.
+      </div>
+      <div class="service-box">
+        <strong>Recruitment Process Management</strong>
+        Professional management of job postings, application screening, interviews, reference checks, and offer stages.
+      </div>
+      <div class="service-box">
+        <strong>Performance Management</strong>
+        Establishing systems to evaluate individual performance, analyze strengths, and build strategies to enhance motivation and engagement.
+      </div>
+      <div class="service-box">
+        <strong>Behavioral & Psychometric Assessments</strong>
+        Measuring personality traits and competencies using scientific tools to evaluate job-role fit accurately.
+      </div>
+      <div class="service-box">
+        <strong>Organizational Development</strong>
+        Analyzing internal structures to improve team dynamics and cross-department communication.
+      </div>
+      <div class="service-box">
+        <strong>Exit Interviews & Experience Analysis</strong>
+        Gathering and analyzing insights from exiting employees to improve retention and workplace satisfaction.
+      </div>
+      <div class="service-box">
+        <strong>Case Study Development</strong>
+        Creating and evaluating position-specific scenarios to test candidate alignment with company goals and culture.
+      </div>
+      <div class="service-box">
+        <strong>HR Analytics & Reporting</strong>
+        Delivering insights to leadership through candidate evaluation summaries, performance metrics, and organizational health reports.
+      </div>
+    </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="contact">
     <h2>Contact</h2>
     <p><strong>Email:</strong> serene@serenaconsultant.com</p>
     <p><strong>Phone:</strong> 0553 263 93 27</p>
