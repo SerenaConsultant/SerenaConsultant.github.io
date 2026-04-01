@@ -185,7 +185,36 @@
             line-height: 1.8;
         }
 
-        /* === FEATURES === */
+        /* === EXPERTISE AREAS === */
+        .expertise {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .expertise-item {
+            background: var(--light-bg);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .expertise-item:hover {
+            background: var(--mint-green);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* === FEATURES (WHY WORK WITH ME) === */
         .features {
             padding: 80px 0;
             background: var(--light-bg);
@@ -218,35 +247,6 @@
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
             color: var(--deep-teal);
-        }
-
-        /* === EXPERTISE AREAS (YENİ) === */
-        .expertise {
-            padding: 80px 0;
-            background: var(--white);
-        }
-
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .expertise-item {
-            background: var(--light-bg);
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .expertise-item:hover {
-            background: var(--mint-green);
-            color: white;
-            transform: translateY(-3px);
         }
 
         /* === CONTACT === */
@@ -353,7 +353,7 @@
     </div>
 </section>
 
-<!-- HİZMETLER -->
+<!-- HİZMETLER (Specialized Services) -->
 <section class="services">
     <div class="container">
         <h2 class="section-title">Specialized Services</h2>
@@ -362,6 +362,8 @@
             <div class="service-card"><div class="service-icon">🤖</div><h3>AI-Powered HR Assessment</h3><p>Integrating AI-based analysis tools for interview analysis, sentiment detection, and data-driven decision systems.</p></div>
             <div class="service-card"><div class="service-icon">🧠</div><h3>Organizational Psychology</h3><p>Psychometric assessment, case-based analysis, and observation-based measurement methods for organizational alignment.</p></div>
             <div class="service-card"><div class="service-icon">📊</div><h3>Assessment & Evaluation</h3><p>Psychometric mapping and data-based reporting to provide measurable development insights.</p></div>
+            <!-- YENİ: Talent Acquisition Analyst -->
+            <div class="service-card"><div class="service-icon">🎯</div><h3>Talent Acquisition Analyst</h3><p>Supporting end-to-end talent acquisition processes through candidate sourcing, CV screening, interview coordination, and recruitment analysis. Focused on aligning candidate qualifications with role requirements, improving hiring efficiency, and contributing to strategic hiring decisions through structured evaluation and insight-driven analysis.</p></div>
         </div>
     </div>
 </section>
@@ -378,22 +380,7 @@
     </div>
 </section>
 
-<!-- NEDEN BEN? -->
-<section class="features">
-    <div class="container">
-        <h2 class="section-title">Why Work With Me?</h2>
-        <div class="features-grid">
-            <div class="feature-item"><div class="feature-icon">🔬</div><h3>Psychology-Based Approach</h3><p>All methods are grounded in scientific research and industrial-organizational psychology.</p></div>
-            <div class="feature-item"><div class="feature-icon">🎯</div><h3>Tailored Solutions</h3><p>No one-size-fits-all. Every program is customized to your organization’s culture and needs.</p></div>
-            <div class="feature-item"><div class="feature-icon">🌍</div><h3>International Experience</h3><p>Extensive experience across USA, UK, and European markets with diverse industries.</p></div>
-            <div class="feature-item"><div class="feature-icon">⚡</div><h3>Interactive Methods</h3><p>Beyond theory: case studies, gamification, and hands-on workshops for lasting impact.</p></div>
-            <div class="feature-item"><div class="feature-icon">📊</div><h3>Data-Driven Results</h3><p>Every process is supported by measurement tools and concrete development reports.</p></div>
-            <div class="feature-item"><div class="feature-icon">💚</div><h3>Wellbeing & Resilience</h3><p>Building workplaces where employees feel safe, valued, and engaged.</p></div>
-        </div>
-    </div>
-</section>
-
-<!-- YENİ: AREAS OF EXPERTISE -->
+<!-- AREAS OF EXPERTISE (önce) -->
 <section class="expertise">
     <div class="container">
         <h2 class="section-title">Areas of Expertise</h2>
@@ -405,6 +392,21 @@
             <div class="expertise-item">AI-supported people analytics consulting</div>
             <div class="expertise-item">Corporate training and competency development</div>
             <div class="expertise-item">Talent Acquisition Analyst</div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY WORK WITH ME? (sonra) -->
+<section class="features">
+    <div class="container">
+        <h2 class="section-title">Why Work With Me?</h2>
+        <div class="features-grid">
+            <div class="feature-item"><div class="feature-icon">🔬</div><h3>Psychology-Based Approach</h3><p>All methods are grounded in scientific research and industrial-organizational psychology.</p></div>
+            <div class="feature-item"><div class="feature-icon">🎯</div><h3>Tailored Solutions</h3><p>No one-size-fits-all. Every program is customized to your organization’s culture and needs.</p></div>
+            <div class="feature-item"><div class="feature-icon">🌍</div><h3>International Experience</h3><p>Extensive experience across USA, UK, and European markets with diverse industries.</p></div>
+            <div class="feature-item"><div class="feature-icon">⚡</div><h3>Interactive Methods</h3><p>Beyond theory: case studies, gamification, and hands-on workshops for lasting impact.</p></div>
+            <div class="feature-item"><div class="feature-icon">📊</div><h3>Data-Driven Results</h3><p>Every process is supported by measurement tools and concrete development reports.</p></div>
+            <div class="feature-item"><div class="feature-icon">💚</div><h3>Wellbeing & Resilience</h3><p>Building workplaces where employees feel safe, valued, and engaged.</p></div>
         </div>
     </div>
 </section>
