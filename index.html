@@ -6,7 +6,7 @@
     <title>Serena Abudara | Industrial & Organizational Psychology Consultant</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* === MODERN & MISTIK RENKLER (SENİN SEVDİĞİN) === */
+        /* === MODERN & MISTIK RENKLER === */
         :root {
             --deep-teal: #1A535C;
             --mint-green: #4ECDC4;
@@ -249,6 +249,46 @@
             color: var(--deep-teal);
         }
 
+        /* === ACHIEVEMENTS (YENİ) === */
+        .achievements {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .achievement-card {
+            background: var(--light-bg);
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid var(--mint-green);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .achievement-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--deep-teal);
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-label {
+            font-size: 1rem;
+            color: var(--charcoal);
+            font-weight: 500;
+        }
+
         /* === CONTACT === */
         .contact {
             padding: 80px 0;
@@ -341,11 +381,11 @@
     </div>
 </section>
 
-<!-- İSTATİSTİKLER -->
+<!-- İSTATİSTİKLER (5+ yıl) -->
 <section class="stats">
     <div class="container">
         <div class="stats-grid">
-            <div><div class="stat-number">4+</div><div class="stat-label">Years Experience</div></div>
+            <div><div class="stat-number">5+</div><div class="stat-label">Years Experience</div></div>
             <div><div class="stat-number">50+</div><div class="stat-label">Corporate Clients</div></div>
             <div><div class="stat-number">10+</div><div class="stat-label">International Projects</div></div>
             <div><div class="stat-number">100%</div><div class="stat-label">Data-Driven Approach</div></div>
@@ -362,7 +402,6 @@
             <div class="service-card"><div class="service-icon">🤖</div><h3>AI-Powered HR Assessment</h3><p>Integrating AI-based analysis tools for interview analysis, sentiment detection, and data-driven decision systems.</p></div>
             <div class="service-card"><div class="service-icon">🧠</div><h3>Organizational Psychology</h3><p>Psychometric assessment, case-based analysis, and observation-based measurement methods for organizational alignment.</p></div>
             <div class="service-card"><div class="service-icon">📊</div><h3>Assessment & Evaluation</h3><p>Psychometric mapping and data-based reporting to provide measurable development insights.</p></div>
-            <!-- YENİ: Talent Acquisition Analyst -->
             <div class="service-card"><div class="service-icon">🎯</div><h3>Talent Acquisition Analyst</h3><p>Supporting end-to-end talent acquisition processes through candidate sourcing, CV screening, interview coordination, and recruitment analysis. Focused on aligning candidate qualifications with role requirements, improving hiring efficiency, and contributing to strategic hiring decisions through structured evaluation and insight-driven analysis.</p></div>
         </div>
     </div>
@@ -373,14 +412,14 @@
     <div class="container">
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
-            <p>As a <strong>People and Culture Management & Analyst Professional</strong> with over 4 years of experience, I specialize in integrating organizational psychology with data-driven recruitment solutions.</p>
+            <p>As a <strong>People and Culture Management & Analyst Professional</strong> with over 5 years of experience, I specialize in integrating organizational psychology with data-driven recruitment solutions.</p>
             <p>My expertise spans <strong>mid- and senior-level hiring</strong> across international markets, with hands-on experience collaborating with clients in the <strong>USA, UK, and Europe</strong>.</p>
             <p>Through strategic workforce planning and behavioral assessments, I optimize talent acquisition while enhancing organizational strategies and team dynamics.</p>
         </div>
     </div>
 </section>
 
-<!-- AREAS OF EXPERTISE (önce) -->
+<!-- AREAS OF EXPERTISE -->
 <section class="expertise">
     <div class="container">
         <h2 class="section-title">Areas of Expertise</h2>
@@ -396,7 +435,32 @@
     </div>
 </section>
 
-<!-- WHY WORK WITH ME? (sonra) -->
+<!-- YENİ: PROVEN ACHIEVEMENTS -->
+<section class="achievements">
+    <div class="container">
+        <h2 class="section-title">Proven Achievements and Concrete Outcomes</h2>
+        <div class="achievements-grid">
+            <div class="achievement-card">
+                <div class="achievement-number">50+</div>
+                <div class="achievement-label">Senior Role Placements<br>(International and local)</div>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-number">30%</div>
+                <div class="achievement-label">Improvement in Cultural Fit Assessments</div>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-number">25%</div>
+                <div class="achievement-label">Faster Hiring Times<br>(Through process optimization)</div>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-number">20+</div>
+                <div class="achievement-label">Position-Specific Case Studies Designed</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY WORK WITH ME? -->
 <section class="features">
     <div class="container">
         <h2 class="section-title">Why Work With Me?</h2>
@@ -418,7 +482,7 @@
         <div class="contact-content">
             <div>
                 <div class="contact-details">
-                    <div class="contact-item"><span>📧</span> seren.serenaconsultant@gmail.com</div>
+                    <div class="contact-item"><span>📧</span> serena.serenaconsultant@gmail.com</div>
                     <div class="contact-item"><span>🌐</span> www.serenaconsultant.com</div>
                     <div class="contact-item"><span>📱</span> +90 553 263 93 27</div>
                     <div class="contact-item"><span>📍</span> Küçükbakkalköy mah. Selvili sok. No:4/20 Ataşehir / İstanbul</div>
