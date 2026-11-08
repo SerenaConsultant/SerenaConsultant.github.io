@@ -68,7 +68,7 @@ header .btn{padding:13px 24px;font-size:15.5px}
 .hero .ring{position:absolute;border:1.5px solid rgba(214,235,130,.16);border-radius:50%;pointer-events:none}
 .hero .r1{width:460px;height:460px;right:-150px;top:-210px}
 .hero .r2{width:620px;height:620px;left:-260px;bottom:-330px}
-.hero h1{color:#fff;font-size:clamp(42px,6.4vw,86px);line-height:1.02;font-weight:700;max-width:16ch;margin:0 auto}
+.hero h1{color:#fff;font-size:clamp(36px,5.2vw,68px);line-height:1.06;font-weight:700;max-width:22ch;margin:0 auto}
 .hero .claim{font-family:var(--head);font-weight:600;font-size:clamp(20px,2.2vw,27px);line-height:1.3;color:var(--lime);max-width:34ch;margin:30px auto 0;letter-spacing:-.005em}
 .hero p.sub{font-size:19px;color:#CFE0D6;max-width:60ch;margin:26px auto 0;line-height:1.7}
 .hero .ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:42px}
@@ -127,7 +127,9 @@ header .btn{padding:13px 24px;font-size:15.5px}
 .mode .meta{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);font-size:15px;color:#E4EEE8}
 @media (max-width:760px){.modes{grid-template-columns:1fr}}
 
-.flowhead{margin-top:72px;font-family:var(--head);font-weight:700;font-size:24px;color:#fff}
+.flowhead{margin-top:88px;font-size:clamp(28px,3.4vw,44px);line-height:1.1;max-width:22ch;color:#fff}
+.flowsub{margin-top:12px;font-size:17px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--lime)}
+.svc-head h2.big{font-size:clamp(34px,4.4vw,56px);margin-top:0}
 .flow{margin-top:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .fstep{position:relative;border-radius:22px;padding:28px;background:#F7F9F7;color:var(--ink)}
 .fstep:not(:last-child)::after{content:"→";position:absolute;right:-17px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;background:var(--lime);color:var(--deep);display:grid;place-items:center;font-weight:700;z-index:2;font-size:15px}
@@ -267,7 +269,7 @@ en: {
   hero:{h1:'Better decisions about people, grounded in science and data.',
     claim:'Every engagement starts with a measurement and ends with a decision you can stand behind.',
     sub:'Consulting and coaching for individuals and organisations, on careers, leadership and teams. From a single career conversation to a leadership programme, the same discipline applies.'},
-  svc:{h:'Services', panelHint:'Choose a service to see the details.',
+  svc:{h:'Services', lead:'Two ways of working, consulting and coaching, each for individuals and for organisations.', panelHint:'Choose a service to see the details.',
     p2:'Coaching for the change that follows: you set the goal, we work over three to six months, and we look at what changed.',
     p3:'Coaching programmes for your people, from new managers to employee wellbeing.',
     careerT:'Career coaching', lifeT:'Life coaching',
@@ -306,7 +308,7 @@ tr: {
   hero:{h1:'İnsanla ilgili daha doğru kararlar; bilime ve veriye dayalı.',
     claim:'Her çalışma bir ölçümle başlar, arkasında durabileceğiniz bir kararla biter.',
     sub:'Bireyler ve kurumlar için kariyer, liderlik ve ekipler üzerine danışmanlık ve koçluk. Tek bir kariyer görüşmesinden kapsamlı bir liderlik programına kadar aynı disiplin geçerlidir.'},
-  svc:{h:'Hizmetler', panelHint:'Detayları görmek için bir hizmet seçin.',
+  svc:{h:'Hizmetler', lead:'İki çalışma biçimi, danışmanlık ve koçluk; her biri bireyler ve kurumlar için.', panelHint:'Detayları görmek için bir hizmet seçin.',
     p2:'Ardından gelen değişim için koçluk: hedefi siz belirlersiniz, üç ila altı ay birlikte çalışırız ve neyin değiştiğine bakarız.',
     p3:'Yeni yöneticilerden çalışan iyi oluşuna kadar, çalışanlarınız için koçluk programları.',
     careerT:'Kariyer koçluğu', lifeT:'Yaşam koçluğu',
@@ -369,11 +371,11 @@ function render(lang){
   $('right').innerHTML = `<div class="lang" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="${lang==='en'}">EN</button><button type="button" data-l="tr" aria-pressed="${lang==='tr'}">TR</button></div><a class="btn dark" href="#contact">${t.book}</a>`;
 
   const h = t.hero;
-  $('hero-in').innerHTML = `<h1>${h.h1}</h1><p class="sub">${h.sub}</p>
+  $('hero-in').innerHTML = `<h1>${h.claim}</h1><p class="sub">${h.sub}</p>
     <div class="ctas"><a class="btn lime" href="#contact">${t.book}</a><a class="btn outline" href="#services">${t.see}</a></div>`;
 
   const s = t.svc;
-  $('svc-in').innerHTML = `<div class="svc-head"><p class="eyebrow">${s.h}</p><h2>${h.claim}</h2></div>
+  $('svc-in').innerHTML = `<div class="svc-head"><h2 class="big">${s.h}</h2><p>${s.lead}</p></div>
     <div class="cards" role="tablist">${s.cards.map((c,i)=>`<button type="button" role="tab" id="tab${i}" aria-controls="panel" aria-selected="${i===current}" class="card${c.k?' k':''}" data-i="${i}"><span class="chip">${icon(c.i)}</span><span class="tag">${c.tag}</span><h3>${c.t}</h3><p>${c.p}</p><span class="more">${s.more}</span></button>`).join('')}</div>
     <div class="panel" id="panel" role="tabpanel" aria-labelledby="tab${current}">${panel(t, current)}</div>`;
   document.querySelectorAll('.card').forEach(b => b.addEventListener('click', () => {
@@ -394,7 +396,7 @@ function render(lang){
     `<div class="fviz">${[58,76,70,96].map(v=>`<span class="fbar" style="height:${v}%"></span>`).join('')}${TREND}</div>`];
   $('appr-in').innerHTML = `<h2>${a.h}</h2><p class="lead">${a.lead}</p>
     <div class="modes">${a.modes.map(([l,q,p,m],i)=>`<div class="mode${i?' k':''}"><span class="tag">${l}</span><p class="q">“${q}”</p><p>${p}</p><p class="meta">${m}</p></div>`).join('')}</div>
-    <p class="flowhead">${a.flowhead}</p>
+    <h2 class="flowhead">${h.h1}</h2><p class="flowsub">${a.flowhead}</p>
     <div class="flow">${a.flow.map(([n,ti,p],i)=>`<div class="fstep">${viz[i]}<span class="n">${n}</span><h3>${ti}</h3><p>${p}</p></div>`).join('')}</div>`;
 
 
