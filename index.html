@@ -61,7 +61,22 @@ header{position:sticky;top:0;z-index:30;background:rgba(247,249,247,.96);backdro
 .lang button[aria-pressed="true"]{background:var(--deep);color:#fff}
 header .btn{padding:13px 24px;font-size:15.5px}
 @media (max-width:1040px){.menu{display:none}}
-@media (max-width:600px){header .btn{display:none}.brand span{font-size:19px}}
+@media (max-width:600px){header .right .btn{display:none}.brand span{font-size:19px}}
+/* phone menu */
+.burger{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:#fff;align-items:center;justify-content:center;cursor:pointer;flex:none}
+.burger i{display:block;width:18px;height:2px;background:var(--ink);position:relative;transition:background .2s ease}
+.burger i::before,.burger i::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--ink);transition:transform .2s ease}
+.burger i::before{top:-6px}.burger i::after{top:6px}
+.burger[aria-expanded="true"] i{background:transparent}
+.burger[aria-expanded="true"] i::before{transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] i::after{transform:translateY(-6px) rotate(-45deg)}
+.mnav{display:none;border-top:1px solid var(--line);background:var(--bg)}
+.mnav.open{display:block}
+.mnav .wrap{padding-top:8px;padding-bottom:24px}
+.mnav a.l{display:block;padding:15px 0;font-size:19px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+.mnav .btn{margin-top:20px;width:100%;justify-content:center}
+@media (max-width:1040px){.burger{display:inline-flex}}
+@media (max-width:420px){.topbar{height:76px;gap:10px}.logo{width:40px;height:44px}.brand{gap:10px}.brand span{font-size:17px}.right{gap:10px}.lang button{padding:7px 10px;font-size:13px}}
 
 /* hero */
 .hero{position:relative;overflow:hidden;background:radial-gradient(900px 520px at 95% 0%, #34715A 0%, rgba(52,113,90,0) 70%), linear-gradient(120deg,#1B3D31 0%,#22493B 55%,#295A47 100%);color:#fff;padding:96px 0 110px;text-align:center}
@@ -133,7 +148,6 @@ header .btn{padding:13px 24px;font-size:15.5px}
 .band .eyebrow{color:var(--lime)}
 #consulting h2,#coaching h2{max-width:22ch}
 .cards.two{grid-template-columns:1fr 1fr}
-@media (max-width:640px){.cards.two{grid-template-columns:1fr}}
 #consulting .fstep{background:#F1F6F2}
 .band .card,.band .panel{color:var(--ink)}
 .band .card h3,.band .panel h3,.band .panel h4{color:var(--ink)}
@@ -229,6 +243,50 @@ header .btn{padding:13px 24px;font-size:15.5px}
 @media (max-width:860px){.cgrid{grid-template-columns:1fr}}
 footer{background:#14302A;color:#9DBDAC;font-size:14.5px;padding:24px 0}
 footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+/* phone only: keep the desktop "side by side" feel */
+@media (max-width:640px){
+  /* 1. service cards become two compact tabs side by side */
+  .cards.two{grid-template-columns:1fr 1fr;gap:10px;margin-top:32px}
+  .cards.two .card{padding:14px 12px 16px;gap:8px;border-radius:16px}
+  .cards.two .card:hover{transform:none;box-shadow:none}
+  .cards.two .card .tag,.cards.two .card p,.cards.two .card .more{display:none}
+  .cards.two .card .chip{width:38px;height:38px;border-radius:12px}
+  .cards.two .card .chip .ico{width:22px;height:22px}
+  .cards.two .card h3{font-size:16px;line-height:1.25}
+  .panel{margin-top:12px}
+  /* 2. measure / decide / re-measure stays in one row */
+  .flow{grid-template-columns:repeat(3,1fr);gap:8px}
+  .fstep{padding:14px 10px;border-radius:16px;min-width:0}
+  .fstep h3,.fstep p{overflow-wrap:break-word;hyphens:auto}
+  .fviz{height:44px;gap:4px;margin-bottom:10px}
+  .fbar{width:10px;border-radius:4px 4px 1px 1px}
+  .check{width:38px;height:38px}
+  .check svg{width:20px;height:20px}
+  .trend{width:30px;height:20px;margin-left:2px}
+  .fstep .n{font-size:11px}
+  .band .fstep h3,.fstep h3{font-size:15px}
+  .fstep p{font-size:12.5px;line-height:1.4}
+  .fstep:not(:last-child)::after{content:"→";left:auto;right:-13px;top:26px;bottom:auto;transform:none;width:20px;height:20px;font-size:11px}
+  /* 3. consulting / coaching cards side by side, swipe to see the second */
+  .modes{grid-template-columns:1fr 1fr;gap:10px;margin-top:32px}
+  .modes .mode{padding:16px 14px 18px;border-radius:18px;min-width:0}
+  .mode .q,.mode p{overflow-wrap:break-word}
+  #approach .mode:hover{transform:none;box-shadow:none}
+  .mode .tag{font-size:11.5px;padding:6px 12px;letter-spacing:.05em}
+  .mode .q{font-size:18px;line-height:1.2;margin:12px 0 8px}
+  .mode p{font-size:13px;line-height:1.45}
+  .mode .meta{margin-top:10px;padding-top:10px;font-size:12px}
+}
+@media (max-width:400px){
+  .modes .mode{padding:14px 11px 16px}
+  .mode .tag{font-size:10.5px;padding:5px 10px}
+  .mode .q{font-size:16px}
+  .mode p{font-size:12.5px}
+  .flow{gap:6px}
+  .fstep{padding:12px 7px}
+  .fstep p{font-size:11.5px;line-height:1.35}
+  .band .fstep h3,.fstep h3{font-size:14px}
+}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}.trend path{stroke-dashoffset:0}}
 </style>
 </head>
@@ -242,6 +300,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <nav class="menu" id="menu" aria-label="Main"></nav>
     <div class="right" id="right"></div>
   </div>
+  <div class="mnav" id="mnav"><div class="wrap" id="mnav-in"></div></div>
 </header>
 
 <main id="top">
@@ -336,7 +395,7 @@ tr: {
   appr:{h:'Danışmanlık mı, Koçluk mu?', lead:'İkisi de ölçmeye ve kanıta dayanır. Farkı, getirdiğiniz sorudur.',
     modes:[['Danışmanlık','Ne yapmalıyım?','Uzman bir değerlendirme ve somut bir sonuç: yol haritası, rapor ya da karar planı.','Bir ila üç görüşme; kurumlar için birkaç hafta.'],['Koçluk','Bunu nasıl yapar ve sürdürürüm?','Hedefi siz belirlersiniz; ben yapı ve araçlarla yanınızda olurum.','Üç ila altı ay süren düzenli seanslar.']],
     flowhead:'Her çalışma nasıl ilerler',
-    flow:[['01','Ölç','Geçerli araçlar, yapılandırılmış görüşmeler ve elinizdeki veri.'],['02','Karar ver','Uygulayabileceğiniz net ve önceliklendirilmiş adımlar.'],['03','Yeniden ölç','Neyin değiştiğini gösteren takip ölçümü.']]},
+    flow:[['01','Ölç','Geçerli araçlar, yapılandırılmış görüşmeler ve elinizdeki veri.'],['02','Karar ver','Uygulayabi­leceğiniz net ve öncelik­lendirilmiş adımlar.'],['03','Yeniden ölç','Neyin değiştiğini gösteren takip ölçümü.']]},
   cons:{h:'Danışmanlık', lead:'“Ne yapmalıyım?” sorusu için. Her çalışma somut bir sonuçla biter.',
     ind:{t:'Kariyer danışmanlığı', s:'Bireyler için', p:'Kariyer kararları, iş arama ve mesleki geçişler için kişiye özel çalışma.',
       rows:[['Kariyer analizi ve yol haritası','Güçlü yönleriniz, ilgi alanlarınız ve öncelikleriniz, seçeneklerinizle birlikte.'],['Kariyer yönü ve karar','Arasında kaldığınız seçeneklerin karşılaştırılması.'],['İşten ayrılma veya çıkarılma sonrası','Yakın dönem öncelikleri ve gerçekçi ilk adımlar.'],['Kariyer arasından sonra işe dönüş','Deneyiminizi güncel biçimde sunma.'],['Yeni mezunların ilk işe geçişi','Başlangıç rolleri, başvuru ve mülakat.'],['İş arama stratejisi','Hedef roller, kanallar ve takip edilebilir bir düzen.'],['Rol veya sektör değişimi','Aktarılabilir beceriler ve geçişin adımları.'],['İş yerindeki güçlükler','Anlaşmazlıklar, sınırlar, kalma ya da ayrılma kararı.'],['Başvurularda kariyer konumlandırması','Hedef rollere göre CV, LinkedIn ve mülakat hazırlığı.']]},
@@ -402,7 +461,13 @@ function render(lang){
   const t = T[lang];
   document.documentElement.lang = lang;
   $('menu').innerHTML = t.menu.map(([h,l]) => `<a href="#${h}">${l}</a>`).join('');
-  $('right').innerHTML = `<div class="lang" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="${lang==='en'}">EN</button><button type="button" data-l="tr" aria-pressed="${lang==='tr'}">TR</button></div><a class="btn dark" href="#contact">${t.book}</a>`;
+  $('right').innerHTML = `<div class="lang" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="${lang==='en'}">EN</button><button type="button" data-l="tr" aria-pressed="${lang==='tr'}">TR</button></div><a class="btn dark" href="#contact">${t.book}</a><button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="mnav" aria-label="${lang==='tr'?'Menü':'Menu'}"><i></i></button>`;
+  $('mnav-in').innerHTML = t.menu.map(([h,l]) => `<a class="l" href="#${h}">${l}</a>`).join('') + `<a class="btn dark" href="#contact">${t.book}</a>`;
+  $('mnav').classList.remove('open');
+  const closeMenu = () => { $('mnav').classList.remove('open'); $('burger').setAttribute('aria-expanded','false'); };
+  $('burger').addEventListener('click', () => { const open = !$('mnav').classList.contains('open'); $('mnav').classList.toggle('open', open); $('burger').setAttribute('aria-expanded', String(open)); });
+  $('mnav').querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.onkeydown = e => { if (e.key === 'Escape') closeMenu(); };
 
   const h = t.hero;
   $('hero-in').innerHTML = `<h1>${h.claim}</h1><p class="sub">${h.sub}</p>
