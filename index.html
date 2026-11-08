@@ -128,8 +128,22 @@ header .btn{padding:13px 24px;font-size:15.5px}
 @media (max-width:760px){.modes{grid-template-columns:1fr}}
 
 .flowhead{margin-top:88px;font-size:clamp(28px,3.4vw,44px);line-height:1.1;max-width:22ch;color:#fff}
-.flowsub{margin-top:12px;font-size:17px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--lime)}
-.svc-head h2.big{font-size:clamp(34px,4.4vw,56px);margin-top:0}
+.flowsub{margin-top:44px;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--leaf)}
+.eyebrow{font-size:13.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--leaf);margin-bottom:14px}
+.band .eyebrow{color:var(--lime)}
+#consulting h2,#coaching h2{max-width:22ch}
+.cards.two{grid-template-columns:1fr 1fr}
+@media (max-width:640px){.cards.two{grid-template-columns:1fr}}
+#consulting .fstep{background:#F1F6F2}
+.band .card,.band .panel{color:var(--ink)}
+.band .card h3,.band .panel h3,.band .panel h4{color:var(--ink)}
+
+/* approach: white section, cards keep the dark green look */
+#approach{background:#FFFFFF;border-top:1px solid var(--line)}
+#approach h2{color:var(--ink)}
+#approach .lead{color:var(--muted)}
+#approach .mode{display:block;text-decoration:none;background:linear-gradient(135deg,#22493B 0%,#2A5746 100%);border:1px solid #2F5E4C;transition:transform .25s ease, box-shadow .25s ease}
+#approach .mode:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(27,61,49,.18)}
 .flow{margin-top:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .fstep{position:relative;border-radius:22px;padding:28px;background:#F7F9F7;color:var(--ink)}
 .fstep:not(:last-child)::after{content:"→";position:absolute;right:-17px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;background:var(--lime);color:var(--deep);display:grid;place-items:center;font-weight:700;z-index:2;font-size:15px}
@@ -232,8 +246,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 <main id="top">
   <section class="hero"><span class="ring r1"></span><span class="ring r2"></span><div class="wrap" id="hero-in"></div></section>
-  <section id="services"><div class="wrap" id="svc-in"></div></section>
-  <section class="band" id="approach"><span class="ring"></span><div class="wrap" id="appr-in"></div></section>
+  <section id="approach"><div class="wrap" id="appr-in"></div></section>
+  <section id="consulting"><div class="wrap" id="cons-in"></div></section>
+  <section class="band" id="coaching"><span class="ring"></span><div class="wrap" id="coach-in"></div></section>
   <section id="about"><div class="wrap about" id="about-in"></div></section>
   <section class="band" id="contact"><span class="ring"></span><div class="wrap" id="contact-in"></div></section>
 </main>
@@ -264,7 +279,7 @@ const TREND = '<svg class="trend" width="70" height="40" viewBox="0 0 70 40" fil
 
 const T = {
 en: {
-  menu:[['services','Services'],['approach','Approach'],['about','About'],['contact','Contact']],
+  menu:[['approach','Approach'],['consulting','Consulting'],['coaching','Coaching'],['about','About']],
   book:'Book a conversation', see:'See services',
   hero:{h1:'Better decisions about people, grounded in science and data.',
     claim:'Every engagement starts with a measurement and ends with a decision you can stand behind.',
@@ -279,7 +294,7 @@ en: {
       {k:1,i:'path',tag:'Coaching · Individuals',t:'Career & life coaching',p:'Change you can carry through and sustain.',href:'#coaching'},
       {k:1,i:'people',tag:'Coaching · Organisations',t:'Leadership & wellbeing coaching',p:'Development that holds inside your teams.',href:'#coaching'}],
     more:'View details'},
-  appr:{h:'Consulting or coaching?', lead:'Both rest on measurement and evidence. The difference is the question you bring.',
+  appr:{h:'Consulting or Coaching?', lead:'Both rest on measurement and evidence. The difference is the question you bring.',
     modes:[['Consulting','What should I do?','An expert assessment and a concrete result: a roadmap, a report or a decision plan.','One to three sessions, or a few weeks for organisations.'],['Coaching','How do I do it, and keep doing it?','You set the goal; I work alongside you with structure and tools.','Three to six months of regular sessions.']],
     flowhead:'How every engagement runs',
     flow:[['01','Measure','Validated tools, structured conversations and the data you already have.'],['02','Decide','Clear, prioritised steps you can act on.'],['03','Re-measure','A follow-up check that shows what changed.']]},
@@ -288,7 +303,7 @@ en: {
       rows:[['Career analysis & roadmap','Strengths, interests and priorities weighed against your options.'],['Career direction & decisions','Comparing the options you are torn between.'],['After a resignation or layoff','Near-term priorities and realistic first steps.'],['Returning after a career break','Presenting your experience in today’s terms.'],['Graduates: the first job','Starting roles, applications and interviews.'],['Job search strategy','Target roles, channels and a trackable routine.'],['Changing role or sector','Transferable skills and the steps of the move.'],['Difficulties at work','Conflict, boundaries and the decision to stay or leave.'],['Positioning your applications','CV, LinkedIn and interview answers for target roles.']]},
     org:{t:'Organisational consulting', s:'For organisations', p:'Evidence for the people decisions that matter most. Work starts with a short diagnostic, grows into a project or continues as part-time expert support.',
       areas:[['star','Leadership & talent',['Leadership & potential assessment','Specialist-to-manager readiness','Independent assessment for critical roles']],['grid','Roles & work design',['Role analysis & competency frameworks','Roles changing with AI']],['pulse','Organisational health & culture',['Climate & engagement','Team dynamics','Workload & psychosocial risk','The human side of change']],['chart','People data & AI',['People analytics','AI readiness & adoption','Fairness & validity review']]]}},
-  coach:{h:'Coaching', lead:'For the question “how do I actually do it, and keep doing it?”. Career coaching for working life, life coaching for everything around it.',
+  coach:{h:'Coaching', h2:'Working alongside you, over time', lead:'For the question “how do I actually do it, and keep doing it?”. Career coaching for working life, life coaching for everything around it.',
     tl:[['Goal','We define what you want to change.'],['Sessions','Regular sessions over three to six months.'],['Practice','You apply it in real situations between sessions.'],['Review','We look at what changed and what comes next.']],
     ind:'For individuals', org:'For organisations',
     arms:[
@@ -303,7 +318,7 @@ en: {
   foot:['© 2026 Serena Abudara · serenaconsultant.com','Ataşehir, Istanbul · clients across Europe']
 },
 tr: {
-  menu:[['services','Hizmetler'],['approach','Yaklaşım'],['about','Hakkımda'],['contact','İletişim']],
+  menu:[['approach','Yaklaşım'],['consulting','Danışmanlık'],['coaching','Koçluk'],['about','Hakkımda']],
   book:'Görüşme planlayın', see:'Hizmetleri görün',
   hero:{h1:'İnsanla ilgili daha doğru kararlar; bilime ve veriye dayalı.',
     claim:'Her çalışma bir ölçümle başlar, arkasında durabileceğiniz bir kararla biter.',
@@ -318,7 +333,7 @@ tr: {
       {k:1,i:'path',tag:'Koçluk · Bireysel',t:'Kariyer ve yaşam koçluğu',p:'Hayata geçirebileceğiniz ve sürdürebileceğiniz değişim.',href:'#coaching'},
       {k:1,i:'people',tag:'Koçluk · Kurumsal',t:'Liderlik ve iyi oluş koçluğu',p:'Ekiplerinizin içinde kalıcı olan gelişim.',href:'#coaching'}],
     more:'Detayları gör'},
-  appr:{h:'Danışmanlık mı, koçluk mu?', lead:'İkisi de ölçmeye ve kanıta dayanır. Farkı, getirdiğiniz sorudur.',
+  appr:{h:'Danışmanlık mı, Koçluk mu?', lead:'İkisi de ölçmeye ve kanıta dayanır. Farkı, getirdiğiniz sorudur.',
     modes:[['Danışmanlık','Ne yapmalıyım?','Uzman bir değerlendirme ve somut bir sonuç: yol haritası, rapor ya da karar planı.','Bir ila üç görüşme; kurumlar için birkaç hafta.'],['Koçluk','Bunu nasıl yapar ve sürdürürüm?','Hedefi siz belirlersiniz; ben yapı ve araçlarla yanınızda olurum.','Üç ila altı ay süren düzenli seanslar.']],
     flowhead:'Her çalışma nasıl ilerler',
     flow:[['01','Ölç','Geçerli araçlar, yapılandırılmış görüşmeler ve elinizdeki veri.'],['02','Karar ver','Uygulayabileceğiniz net ve önceliklendirilmiş adımlar.'],['03','Yeniden ölç','Neyin değiştiğini gösteren takip ölçümü.']]},
@@ -327,7 +342,7 @@ tr: {
       rows:[['Kariyer analizi ve yol haritası','Güçlü yönleriniz, ilgi alanlarınız ve öncelikleriniz, seçeneklerinizle birlikte.'],['Kariyer yönü ve karar','Arasında kaldığınız seçeneklerin karşılaştırılması.'],['İşten ayrılma veya çıkarılma sonrası','Yakın dönem öncelikleri ve gerçekçi ilk adımlar.'],['Kariyer arasından sonra işe dönüş','Deneyiminizi güncel biçimde sunma.'],['Yeni mezunların ilk işe geçişi','Başlangıç rolleri, başvuru ve mülakat.'],['İş arama stratejisi','Hedef roller, kanallar ve takip edilebilir bir düzen.'],['Rol veya sektör değişimi','Aktarılabilir beceriler ve geçişin adımları.'],['İş yerindeki güçlükler','Anlaşmazlıklar, sınırlar, kalma ya da ayrılma kararı.'],['Başvurularda kariyer konumlandırması','Hedef rollere göre CV, LinkedIn ve mülakat hazırlığı.']]},
     org:{t:'Kurumsal danışmanlık', s:'Kurumlar için', p:'En kritik insan kararları için kanıt. Çalışma kısa bir teşhisle başlar, projeye dönüşür ya da yarı zamanlı uzman desteği olarak sürer.',
       areas:[['star','Liderlik ve yetenek',['Liderlik ve potansiyel değerlendirmesi','Uzmanlıktan yöneticiliğe geçiş','Kritik pozisyonlarda bağımsız değerlendirme']],['grid','Roller ve işin tasarımı',['Rol analizi ve yetkinlik modeli','AI ile değişen roller']],['pulse','Organizasyon sağlığı ve kültür',['Çalışma iklimi ve bağlılık','Ekip dinamikleri','İş yükü ve psikososyal risk','Değişimde insan boyutu']],['chart','İnsan verisi ve AI',['İnsan verisi analizi (People Analytics)','AI hazırlığı ve benimseme','Adillik ve geçerlilik incelemesi']]]}},
-  coach:{h:'Koçluk', lead:'“Bunu nasıl gerçekten yapar ve sürdürürüm?” sorusu için. Çalışma hayatı için kariyer koçluğu, onun çevresindeki her şey için yaşam koçluğu.',
+  coach:{h:'Koçluk', h2:'Zaman içinde, yanınızda', lead:'“Bunu nasıl gerçekten yapar ve sürdürürüm?” sorusu için. Çalışma hayatı için kariyer koçluğu, onun çevresindeki her şey için yaşam koçluğu.',
     tl:[['Hedef','Neyi değiştirmek istediğinizi birlikte belirleriz.'],['Seanslar','Üç ila altı ay süren düzenli seanslar.'],['Uygulama','Seanslar arasında gerçek durumlarda uygularsınız.'],['Değerlendirme','Neyin değiştiğine ve sıradaki adıma bakarız.']],
     ind:'Bireyler için', org:'Kurumlar için',
     arms:[
@@ -343,7 +358,26 @@ tr: {
 }};
 
 const $ = id => document.getElementById(id);
-let current = 0;
+const state = { cons: 0, coach: 2 };
+
+/* Two cards that open their details below, without leaving the section. */
+function tabs(t, key, idxs){
+  const s = t.svc;
+  return `<div class="cards two" role="tablist">${idxs.map(i=>{const c=s.cards[i]; return `<button type="button" role="tab" id="tab${i}" aria-controls="panel-${key}" aria-selected="${i===state[key]}" class="card${c.k?' k':''}" data-i="${i}" data-key="${key}"><span class="chip">${icon(c.i)}</span><span class="tag">${c.tag}</span><h3>${c.t}</h3><p>${c.p}</p><span class="more">${s.more}</span></button>`;}).join('')}</div>
+    <div class="panel" id="panel-${key}" role="tabpanel" aria-labelledby="tab${state[key]}">${panel(t, state[key])}</div>`;
+}
+function bindTabs(t){
+  document.querySelectorAll('.card[data-key]').forEach(b => b.addEventListener('click', () => {
+    const key = b.dataset.key; state[key] = +b.dataset.i;
+    document.querySelectorAll(`.card[data-key="${key}"]`).forEach(x => x.setAttribute('aria-selected', x === b));
+    const p = $('panel-' + key);
+    p.setAttribute('aria-labelledby', 'tab' + state[key]);
+    p.innerHTML = panel(t, state[key]);
+    p.style.animation = 'none'; void p.offsetWidth; p.style.animation = '';
+    const r = p.getBoundingClientRect();
+    if (r.top > window.innerHeight - 120) p.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }));
+}
 
 /* Detail panel for the selected service card. */
 function panel(t, i){
@@ -372,32 +406,25 @@ function render(lang){
 
   const h = t.hero;
   $('hero-in').innerHTML = `<h1>${h.claim}</h1><p class="sub">${h.sub}</p>
-    <div class="ctas"><a class="btn lime" href="#contact">${t.book}</a><a class="btn outline" href="#services">${t.see}</a></div>`;
-
-  const s = t.svc;
-  $('svc-in').innerHTML = `<div class="svc-head"><h2 class="big">${s.h}</h2><p>${s.lead}</p></div>
-    <div class="cards" role="tablist">${s.cards.map((c,i)=>`<button type="button" role="tab" id="tab${i}" aria-controls="panel" aria-selected="${i===current}" class="card${c.k?' k':''}" data-i="${i}"><span class="chip">${icon(c.i)}</span><span class="tag">${c.tag}</span><h3>${c.t}</h3><p>${c.p}</p><span class="more">${s.more}</span></button>`).join('')}</div>
-    <div class="panel" id="panel" role="tabpanel" aria-labelledby="tab${current}">${panel(t, current)}</div>`;
-  document.querySelectorAll('.card').forEach(b => b.addEventListener('click', () => {
-    current = +b.dataset.i;
-    document.querySelectorAll('.card').forEach(x => x.setAttribute('aria-selected', x === b));
-    const p = $('panel');
-    p.setAttribute('aria-labelledby', 'tab' + current);
-    p.innerHTML = panel(t, current);
-    p.style.animation = 'none'; void p.offsetWidth; p.style.animation = '';
-    const r = p.getBoundingClientRect();
-    if (r.top > window.innerHeight - 120) p.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }));
+    <div class="ctas"><a class="btn lime" href="#contact">${t.book}</a><a class="btn outline" href="#approach">${t.see}</a></div>`;
 
   const a = t.appr;
+  $('appr-in').innerHTML = `<h2>${a.h}</h2><p class="lead">${a.lead}</p>
+    <div class="modes">${a.modes.map(([l,q,p,m],i)=>`<a class="mode${i?' k':''}" href="#${i?'coaching':'consulting'}"><span class="tag">${l}</span><p class="q">“${q}”</p><p>${p}</p><p class="meta">${m}</p></a>`).join('')}</div>`;
+
   const viz = [
     `<div class="fviz">${[34,52,44,60].map(v=>`<span class="fbar" style="height:${v}%"></span>`).join('')}</div>`,
     `<div class="fviz"><span class="check">${CHECK}</span></div>`,
     `<div class="fviz">${[58,76,70,96].map(v=>`<span class="fbar" style="height:${v}%"></span>`).join('')}${TREND}</div>`];
-  $('appr-in').innerHTML = `<h2>${a.h}</h2><p class="lead">${a.lead}</p>
-    <div class="modes">${a.modes.map(([l,q,p,m],i)=>`<div class="mode${i?' k':''}"><span class="tag">${l}</span><p class="q">“${q}”</p><p>${p}</p><p class="meta">${m}</p></div>`).join('')}</div>
-    <h2 class="flowhead">${h.h1}</h2><p class="flowsub">${a.flowhead}</p>
-    <div class="flow">${a.flow.map(([n,ti,p],i)=>`<div class="fstep">${viz[i]}<span class="n">${n}</span><h3>${ti}</h3><p>${p}</p></div>`).join('')}</div>`;
+  const c = t.cons;
+  $('cons-in').innerHTML = `<p class="eyebrow">${c.h}</p><h2>${h.h1}</h2><p class="lead">${c.lead}</p>
+    <p class="flowsub">${a.flowhead}</p>
+    <div class="flow">${a.flow.map(([n,ti,p],i)=>`<div class="fstep">${viz[i]}<span class="n">${n}</span><h3>${ti}</h3><p>${p}</p></div>`).join('')}</div>
+    ${tabs(t, 'cons', [0,1])}`;
+
+  const k = t.coach;
+  $('coach-in').innerHTML = `<p class="eyebrow">${k.h}</p><h2>${k.h2}</h2><p class="lead">${k.lead}</p>${tabs(t, 'coach', [2,3])}`;
+  bindTabs(t);
 
 
   const ab = t.about;
