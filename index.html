@@ -213,11 +213,11 @@ header .btn{padding:13px 24px;font-size:15.5px}
 @media (max-width:860px){.arms{grid-template-columns:1fr}}
 
 /* about */
-.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
-.about .role{color:var(--leaf);font-weight:600;margin-top:14px}
-.about-text p{font-size:19px;color:var(--ink);max-width:62ch}
-.about-text p + p{margin-top:18px;color:var(--muted);font-size:17.5px}
-@media (max-width:860px){.about{grid-template-columns:1fr;gap:24px}}
+.about{max-width:820px}
+.about .role{color:var(--leaf);font-weight:600;font-size:17px;margin-top:12px}
+.about-text{margin-top:34px;padding-left:26px;border-left:3px solid var(--lime)}
+.about-text p{font-size:21px;line-height:1.55;color:var(--ink);max-width:62ch}
+.about-text p + p{margin-top:18px;color:var(--muted);font-size:17.5px;line-height:1.7}
 
 /* contact */
 .cgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start}
@@ -313,7 +313,7 @@ en: {
         org:[['Employee wellbeing coaching','Confidential coaching for your people, linked to workload and wellbeing findings.']]}]},
   about:{h:'About', role:'People & Behavioral Analytics Consultant · Certified Coach',
     t1:'I work with organisations and individuals on the decisions that shape working life: who leads, how teams work and which step comes next.',
-    t2:'Throughout my career I have assessed, analysed and developed people for international companies, and deepened that work with certified training in assessment and analytics. As a certified coach, I now combine consulting based on people data with coaching for the change that follows. I work with clients across Europe, in English and Turkish.'},
+    t2:'Throughout my career I have assessed, analysed and developed people for international companies, and deepened that work with certified training in assessment and analytics. As a certified coach, I now combine consulting based on people data with coaching for the change that follows. I work with an international client base, mainly across Europe, as well as in Türkiye.'},
   contact:{h:'Let’s talk', lead:'Tell me briefly what you need, for your organisation or for your own career, and I will come back to you about how we could work together. Sessions are held online, in English or Turkish.', wa:'Message on WhatsApp', mail:'Send an email', phone:'Phone & WhatsApp', email:'Email', loc:'Location', li:'LinkedIn'},
   foot:['© 2026 Serena Abudara · serenaconsultant.com','Ataşehir, Istanbul · clients across Europe']
 },
@@ -352,7 +352,7 @@ tr: {
         org:[['Çalışan iyi oluş koçluğu','Çalışanlarınız için gizlilik içinde, iş yükü ve iyi oluş bulgularıyla bağlantılı koçluk.']]}]},
   about:{h:'Hakkımda', role:'İnsan ve Davranış Analitiği Danışmanı · Sertifikalı Koç',
     t1:'Kurumlar ve bireylerle, çalışma hayatını şekillendiren kararlar üzerine çalışıyorum: kimin liderlik edeceği, ekiplerin nasıl çalışacağı ve bir sonraki adımın ne olacağı.',
-    t2:'Kariyerim boyunca uluslararası firmalar için insanları değerlendirme, analiz etme ve geliştirme üzerine çalıştım; bu deneyimi değerlendirme ve analitik alanındaki sertifikalı eğitimlerle derinleştirdim. Sertifikalı bir koç olarak bugün insan verisine dayanan danışmanlığı, ardından gelen değişim için koçlukla birleştiriyorum. Avrupa genelinde, Türkçe ve İngilizce çalışıyorum.'},
+    t2:'Kariyerim boyunca uluslararası firmalar için insanları değerlendirme, analiz etme ve geliştirme üzerine çalıştım; bu deneyimi değerlendirme ve analitik alanındaki sertifikalı eğitimlerle derinleştirdim. Sertifikalı bir koç olarak bugün insan verisine dayanan danışmanlığı, ardından gelen değişim için koçlukla birleştiriyorum. Avrupa ağırlıklı olmak üzere, Türkiye’den ve farklı ülkelerden uluslararası bir danışan kitlesiyle çalışıyorum.'},
   contact:{h:'Konuşalım', lead:'Kurumunuz ya da kendi kariyeriniz için neye ihtiyaç duyduğunuzu kısaca yazın; nasıl birlikte çalışabileceğimizle ilgili size dönüş yapayım. Görüşmeler çevrim içi, Türkçe veya İngilizce yapılır.', wa:'WhatsApp’tan yazın', mail:'E-posta gönderin', phone:'Telefon ve WhatsApp', email:'E-posta', loc:'Konum', li:'LinkedIn'},
   foot:['© 2026 Serena Abudara · serenaconsultant.com','Ataşehir, İstanbul · Avrupa genelinde danışanlar']
 }};
@@ -428,7 +428,7 @@ function render(lang){
 
 
   const ab = t.about;
-  $('about-in').innerHTML = `<div><h2>${ab.h}</h2><p class="role">${ab.role}</p></div><div class="about-text"><p>${ab.t1}</p><p>${ab.t2}</p></div>`;
+  $('about-in').innerHTML = `<p class="eyebrow">${ab.h}</p><h2>Serena Abudara</h2><p class="role">${ab.role}</p><div class="about-text"><p>${ab.t1}</p><p>${ab.t2}</p></div>`;
 
   const ct = t.contact;
   $('contact-in').innerHTML = `<div class="cgrid">
